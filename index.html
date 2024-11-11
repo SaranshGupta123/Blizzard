@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blizzard Games</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-
     <style>
         .text-warning:hover {
             text-decoration: underline;
         }
     </style>
 </head>
-
 <body class="bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -142,15 +139,15 @@
                 <button class="btn btn-danger me-3">Purchase Today</button>
                 <button class="btn btn-outline-light">Learn More</button>
             </div>
-            <div class="mt-5">
-                <h3 class="text-warning fw-bold mb-4 text-start ms-3" style="font-size: 1.2rem;">
-                    LATEST NEWS & UPDATES
-                    <a href="#" class="text-warning text-decoration-none hover-underline-animation">View all news</a>
-                </h3>
+            <div class="d-flex justify-content-start mt-5 pt-5 ms-3">
+                <div class="d-flex align-items-center">
+                    <span class="me-2 text-uppercase fw-bold text-info small">LATEST NEWS & UPDATES</span
+                    <a href="#" class="text-white text-decoration-underline-hover-info">View all news</a>
+                </div>
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="link-to-news-1" class="card h-100 card-hover"
+                    <a href="#" class="card h-100 card-hover"
                         style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="2.jpeg" class="card-img-top" alt="News 1"
@@ -165,7 +162,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="link-to-news-2" class="card h-100 card-hover"
+                    <a href="#" class="card h-100 card-hover"
                         style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="3.webp" class="card-img-top" alt="News 2"
@@ -180,7 +177,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="link-to-news-3" class="card h-100 card-hover"
+                    <a href="#" class="card h-100 card-hover"
                         style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="5.jpeg" class="card-img-top" alt="News 3"
@@ -195,7 +192,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="link-to-news-4" class="card h-100 card-hover"
+                    <a href="#" class="card h-100 card-hover"
                         style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="6.jpg" class="card-img-top" alt="News 4"
@@ -213,32 +210,24 @@
         </div>
     </section>
     <div class="container-fluid p-0">
-        <div class="col-12">
-            <div class="card border-0 position-relative">
-                <div class="row"
-                    style="background: url('4.webp') center/cover; padding: 60px 0;position: relative;margin-right: 0vw;color: #ccc; text-align: center;background-color: #111; background-blend-mode: overlay;">
-                    <div class="card-body text-center" style="position: relative; z-index: 1">
-                        <p class="mb-4"
-                            style="font-size: 1.5rem; max-width: 65%; margin: 0 auto;color: #bbb; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
-                            Learn what's ahead.
-                        </p>
-                        <h1 class="card-title"
-                            style="font-size: 2.5rem;max-width: 65%;margin: 0 auto;color: #fff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)">
-                            Save the Date for Warcraft 30th Anniversary Direct
-                        </h1>
-                        <p class="card-text"
-                            style="font-size: 1.25rem;max-width: 50%;margin: 20px auto;color: #ddd;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
-                            Join us November 13 at 10:00 am PST for a special presentation
-                            celebrating 30 years of Warcraft and a look ahead at what's next.
-                        </p>
-                        <a href="#" class="btn btn-outline-light"
-                            style="font-size: 1.2rem;padding: 10px 20px;max-width: 40%;margin: 20px auto 60px;color: #fff;border-color: #ccc;">Learn
-                            More</a>
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 p-3"
-                        style="left: 20px; font-size: 1rem;color: #888;">
-                        Adopt until January 7, 2025.
-                    </div>
+        <div class="card border-0 position-relative">
+            <div class="row g-0 align-items-center justify-content-center" style="background: url('4.webp') center/cover; padding: 40px 0; color: #ccc; background-color: #111; background-blend-mode: overlay;">
+                <div class="col-11 text-end" style="margin-right: 5%;">
+                    <p class="mb-4 fw-bold text-white-50" style="font-size: 1.5rem;">
+                        Learn what's ahead.
+                    </p>
+                    <h1 class="card-title fw-bolder text-white" style="font-size: 2.5rem;">
+                        Save the Date for Warcraft 30th <br> Anniversary Direct
+                    </h1>
+                    <p class="card-text text-white-50" style="font-size: 1.25rem;">
+                        Join us November 13 at 10:00 am PST for a special presentation <br> celebrating 30 years of Warcraft and a look ahead at what's next.
+                    </p>
+                    <a href="#" class="btn btn-outline-light mt-4" style="font-size: 1.2rem; padding: 10px 20px;">
+                        Learn More
+                    </a>
+                </div>
+                <div class="position-absolute bottom-0 start-0 p-3 text-white-50" style="font-size: 1rem;">
+                    Adopt until January 7, 2025.
                 </div>
             </div>
         </div>
@@ -255,8 +244,8 @@
                             <img src="7.webp" class="card-img-top" alt="Content Update Notes" />
                         </div>
                         <div class="card-body">
-                            <p class="card-text">The War Within</p>
-                            <h3 class="card-title">Content Update Notes</h3>
+                            <p class="card-text text-warning">The War Within</p>
+                            <h3 class="card-title text-warning">Content Update Notes</h3>
                         </div>
                     </div>
                 </a>
@@ -271,8 +260,8 @@
                             <img src="8.jpeg" class="card-img-top" alt="Hotfixes" />
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Latest Updates</p>
-                            <h3 class="card-title">Hotfixes</h3>
+                            <p class="card-text text-warning">Latest Updates</p>
+                            <h3 class="card-title text-warning">Hotfixes</h3>
                         </div>
                     </div>
                 </a>
@@ -343,5 +332,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
