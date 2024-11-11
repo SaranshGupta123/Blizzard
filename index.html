@@ -5,373 +5,255 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blizzard Games</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        .text-warning:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top">
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <div class="row w-100 justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Blizzard Dropdown -->
-                        <div class="dropdown">
-                            <button class="btn btn-dark dropdown-toggle" type="button" id="blizzardDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-droplet"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="blizzardDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">Visit Blizzard.com</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">All Games</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <li class="dropdown-item text-warning ">You might also like this</li>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">World of Warcraft: The War Within</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">World of Warcraft: Cataclysm Classic</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Hearthstone</a></li>
-                                <li><a class="dropdown-item" href="#">Warcraft Rumble</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Game Info Dropdown -->
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-dark dropdown-toggle" type="button" id="gameInfoDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-joystick"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="gameInfoDropdown">
-                                <li><a class="dropdown-item" href="#">Overview</a></li>
-                                <li><a class="dropdown-item" href="#">Races</a></li>
-                                <li><a class="dropdown-item" href="#">Classes</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Returning Players</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Realm Status</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Content Update Notes</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <li class="dropdown-item text-warning ">You might also like this</li>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Story & Media</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Warcraft Timeline</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Expansions Dropdown -->
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-dark dropdown-toggle" type="button" id="expansionsDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Expansions
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="expansionsDropdown">
-                                <li><a class="dropdown-item" href="#">The War Within</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <li class="dropdown-item text-warning ">Wow classic</li>
-                                </li>
-                                <li><a class="dropdown-item" href="#">
-                                    Cataclysm Classic</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Community Dropdown -->
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-dark dropdown-toggle" type="button" id="communityDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Community
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="communityDropdown">
-                                <li><a class="dropdown-item" href="#">Community 1</a></li>
-                                <li><a class="dropdown-item" href="#">Community 2</a></li>
-                                <li><a class="dropdown-item" href="#">Community 3</a></li>
-                                <li><a class="dropdown-item" href="#">Community 4</a></li>
-                                <li><a class="dropdown-item" href="#">Community 5</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <li class="dropdown-item text-warning ">Esports</li>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Community 6</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Search Dropdown -->
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-dark dropdown-toggle" type="button" id="searchDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-search"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark p-3" style="width: 200px"
-                                aria-labelledby="searchDropdown">
-                                <form action="https://www.google.com/search" method="GET" target="_blank">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search Blizzard" name="q"
-                                            aria-label="Search Blizzard" />
-                                        <button class="btn btn-primary" type="submit">
-                                            Search
-                                        </button>
-                                    </div>
-                                </form>
-                            </ul>
-                        </div>
-
-                        <!-- Account Dropdown -->
-                        <div class="dropdown ms-3">
-                            <button class="btn btn-dark dropdown-toggle d-flex align-items-center" type="button"
-                                id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person"></i> Account
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="accountDropdown">
-                                <li>
-                                    <button class="dropdown-item text-center bg-blue" type="button">
-                                        Login 
-                                    </button>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li><a class="dropdown-item" href="#">WoW Character</a></li>
-                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Sign UP</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li><a class="dropdown-item" href="#">Support</a></li>
-                                <li><a class="dropdown-item" href="#">Shop</a></li>
-                                <li><a class="dropdown-item" href="#">Download Battel.net</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Additional Buttons -->
-                        <div class="ms-3">
-                            <a class="btn btn-primary me-2" href="#">Try Free</a>
-                            <a class="btn btn-secondary" href="#">Subscribe Now</a>
-                        </div>
-                    </div>
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <div class="dropdown">
+                    <a class="nav-link p-0" href="#" id="blizzardDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="9.webp" alt="Blizzard" style="height: 30px;">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="blizzardDropdown">
+                        <li><a class="dropdown-item" href="#">Visit Blizzard.com</a></li>
+                        <li><a class="dropdown-item" href="#">All Games</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">You might also like
+                            this</li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="13.png" alt="War Within" style="height: 20px; margin-right: 10px;">
+                                World of Warcraft: The War Within
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="14.png" alt="Cataclysm Classic" style="height: 20px; margin-right: 10px;">
+                                World of Warcraft: Cataclysm Classic
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="15.png" alt="Hearthstone" style="height: 20px; margin-right: 10px;">
+                                Hearthstone
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="16.png" alt="Warcraft Rumble" style="height: 20px; margin-right: 10px;">
+                                Warcraft Rumble
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown d-flex align-items-center ms-3">
+                    <a class="nav-link p-0 d-flex align-items-center" href="#" id="gameInfoDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="12.png" alt="Game Icon" style="height: 30px;">
+                        <span class="ms-2 text-white">Game Info</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="gameInfoDropdown"
+                        style="min-width: 250px;">
+                        <li><a class="dropdown-item" href="#">Overview</a></li>
+                        <li><a class="dropdown-item" href="#">Races</a></li>
+                        <li><a class="dropdown-item" href="#">Classes</a></li>
+                        <li><a class="dropdown-item" href="#">Returning Players</a></li>
+                        <li><a class="dropdown-item" href="#">Realm Status</a></li>
+                        <li><a class="dropdown-item" href="#">Content Update Notes</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">LORE</li>
+                        <li><a class="dropdown-item" href="#">Story & Media</a></li>
+                        <li><a class="dropdown-item" href="#">Warcraft Timeline</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown ms-3">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="expansionsDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Expansions
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="expansionsDropdown">
+                        <li><a class="dropdown-item" href="#">The War Within</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">Wow classic</li>
+                        <li><a class="dropdown-item" href="#">Cataclysm Classic</a></li>
+                    </ul>
+                </div>
+                <a class="nav-link text-white ms-3" href="#">News</a>
+                <a class="nav-link text-white ms-3" href="#">Community</a>
+                <a class="nav-link text-white ms-3" href="#">Shop</a>
+                <div class="dropdown ms-3">
+                    <a class="nav-link p-0" href="#" id="accountDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-person text-white"></i> Account
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark p-3" aria-labelledby="accountDropdown">
+                        <li>
+                            <a href="#" class="btn btn-primary w-100 d-flex align-items-center mb-2">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>
+                                Log In
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">WoW Characters</a></li>
+                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Support</a></li>
+                        <li><a class="dropdown-item" href="#">Shop</a></li>
+                        <li><a class="dropdown-item" href="#">Download Battle.net</a></li>
+                    </ul>
+                </div>
+                <div class="ms-3">
+                    <a class="btn btn-warning me-2" href="#" role="button">Try Free</a>
+                    <a class="btn btn-danger" href="#" role="button">Subscribe Now</a>
                 </div>
             </div>
         </div>
     </nav>
-
-    <section class="jumbotron d-flex align-items-center pt-9" style="
-    background-image: url('1.gif');
-    background-size: cover;
-    background-position: center;
-    color: #f8f8f2;
-    padding-top: 120px; 
-      ">
-        <div class="container text-center px-4">
-            <!-- Main Heading -->
-            <h1 class="display-3 text-light fw-bold mb-3" style="font-size: 3rem; line-height: 1.2">
-                WORLD OF WARCRAFT®: THE WAR WITHIN™ NOW LIVE!
-            </h1>
-
-            <!-- Subtitle Text -->
-            <p class="lead mx-auto" style="
-            max-width: 700px;
-            color: #d3c6b8;
-            font-size: 1.1rem;
-            line-height: 1.6;
-          ">
-                Get back in the fight as you defend Azeroth from the shadows below.
-                Journey through never-before-seen subterranean worlds filled with
-                hidden wonders and lurking perils, down to the dark depths of the
-                nerubian empire, where the malicious Harbinger of the Void is
-                gathering arachnid forces to bring Azeroth to its knees.
+    <section class="jumbotron d-flex align-items-center pt-9"
+        style="background-image: url('1.gif'); background-size: cover; background-position: center; color: #f8f8f2; padding-top: 120px;">
+        <div class="container-fluid p-5 text-center text-light"
+            style="background-image: url('your-hero-image.jpg'); background-size: cover; background-position: center;">
+            <h1 class="display-4 text-start ms-3">WORLD OF WARCRAFT®: THE WAR WITHIN™ NOW LIVE!</h1>
+            <p class="lead text-start ms-3" style="max-width: 50%; margin-right: auto;">
+                Get back in the fight as you defend Azeroth from the shadows below. Journey through never-before-seen
+                subterranean worlds filled with hidden wonders and lurking perils, down to the dark depths of the
+                nerubian empire, where the malicious Harbinger of the Void is gathering arachnid forces to bring Azeroth
+                to its knees.
             </p>
-
-            <!-- Action Buttons -->
-            <div class="d-flex justify-content-center my-4">
-                <a href="#" class="btn btn-warning btn-lg me-3 fw-bold text-dark"
-                    style="border-radius: 0; padding: 12px 24px">PURCHASE TODAY!</a>
-                <a href="#" class="btn btn-outline-warning btn-lg fw-bold text-warning"
-                    style="border-radius: 0; padding: 12px 24px">LEARN MORE</a>
+            <div class="d-flex justify-content-start mt-3 ms-3">
+                <button class="btn btn-danger me-3">Purchase Today</button>
+                <button class="btn btn-outline-light">Learn More</button>
             </div>
-
-            <!-- News Section Header -->
             <div class="mt-5">
-                <h3 class="text-warning fw-bold mb-4" style="font-size: 1.8rem">
+                <h3 class="text-warning fw-bold mb-4 text-start ms-3" style="font-size: 1.2rem;">
                     LATEST NEWS & UPDATES
-                    <a href="#" class="text-warning text-decoration-none">View all news</a>
+                    <a href="#" class="text-warning text-decoration-none hover-underline-animation">View all news</a>
                 </h3>
             </div>
-
-            <!-- News Cards -->
             <div class="row justify-content-center mt-4">
                 <div class="col-md-3 col-6 mb-3">
-                    <div class="card h-100" style="border: none; background-color: transparent">
+                    <a href="link-to-news-1" class="card h-100 card-hover"
+                        style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="2.jpeg" class="card-img-top" alt="News 1"
                                 style="height: 180px; object-fit: cover" />
                             <div class="card-img-overlay d-flex flex-column justify-content-end"
                                 style="background: rgba(0, 0, 0, 0.6); padding: 10px">
-                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">
-                                    Get the Drop on New Rewards During the Warcraft 30th
-                                    Anniversary Direct
-                                </h5>
-                                <p class="card-text text-light" style="font-size: 0.9rem">
-                                    November 9, 2024
-                                </p>
+                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">Get the Drop on
+                                    New Rewards During the Warcraft 30th Anniversary Direct</h5>
+                                <p class="card-text text-light" style="font-size: 0.9rem">November 9, 2024</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <div class="card h-100" style="border: none; background-color: transparent">
+                    <a href="link-to-news-2" class="card h-100 card-hover"
+                        style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="3.webp" class="card-img-top" alt="News 2"
                                 style="height: 180px; object-fit: cover" />
                             <div class="card-img-overlay d-flex flex-column justify-content-end"
                                 style="background: rgba(0, 0, 0, 0.6); padding: 10px">
-                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">
-                                    Cataclysm Classic: Face the Heat in the Firelands
-                                </h5>
-                                <p class="card-text text-light" style="font-size: 0.9rem">
-                                    November 8, 2024
-                                </p>
+                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">Cataclysm
+                                    Classic: Face the Heat in the Firelands</h5>
+                                <p class="card-text text-light" style="font-size: 0.9rem">November 8, 2024</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <div class="card h-100" style="border: none; background-color: transparent">
+                    <a href="link-to-news-3" class="card h-100 card-hover"
+                        style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="5.jpeg" class="card-img-top" alt="News 3"
                                 style="height: 180px; object-fit: cover" />
                             <div class="card-img-overlay d-flex flex-column justify-content-end"
                                 style="background: rgba(0, 0, 0, 0.6); padding: 10px">
-                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">
-                                    [Updated 11/1] Rally Your Forces for Season of Discovery
-                                    Phase 6
-                                </h5>
-                                <p class="card-text text-light" style="font-size: 0.9rem">
-                                    November 2, 2024
-                                </p>
+                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">[Updated 11/1]
+                                    Rally Your Forces for Season of Discovery Phase 6</h5>
+                                <p class="card-text text-light" style="font-size: 0.9rem">November 2, 2024</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <div class="card h-100" style="border: none; background-color: transparent">
+                    <a href="link-to-news-4" class="card h-100 card-hover"
+                        style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="6.jpg" class="card-img-top" alt="News 4"
                                 style="height: 180px; object-fit: cover" />
                             <div class="card-img-overlay d-flex flex-column justify-content-end"
                                 style="background: rgba(0, 0, 0, 0.6); padding: 10px">
-                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">
-                                    The War Within PTR: 11.0.7 Content Update
-                                </h5>
-                                <p class="card-text text-light" style="font-size: 0.9rem">
-                                    October 30, 2024
-                                </p>
+                                <h5 class="card-title text-warning fw-bold mb-1" style="font-size: 1rem">The War Within
+                                    PTR: 11.0.7 Content Update</h5>
+                                <p class="card-text text-light" style="font-size: 0.9rem">October 30, 2024</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
     <div class="container-fluid p-0">
         <div class="col-12">
             <div class="card border-0 position-relative">
-                <div class="row" style="
-                    background: url('4.webp') center/cover;
-                    padding: 60px 0;
-                    position: relative;
-                    margin-right: 0vw;
-                    color: #ccc;
-                    text-align: center;
-                    background-color: #111; 
-                    background-blend-mode: overlay;
-                ">
+                <div class="row"
+                    style="background: url('4.webp') center/cover; padding: 60px 0;position: relative;margin-right: 0vw;color: #ccc; text-align: center;background-color: #111; background-blend-mode: overlay;">
                     <div class="card-body text-center" style="position: relative; z-index: 1">
-                        <p class="mb-4" style="
-                            font-size: 1.5rem;
-                            max-width: 65%;
-                            margin: 0 auto;
-                            color: #bbb;
-                            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-                        ">
+                        <p class="mb-4"
+                            style="font-size: 1.5rem; max-width: 65%; margin: 0 auto;color: #bbb; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
                             Learn what's ahead.
                         </p>
-                        <h1 class="card-title" style="
-                            font-size: 2.5rem;
-                            max-width: 65%;
-                            margin: 0 auto;
-                            color: #fff;
-                            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-                        ">
+                        <h1 class="card-title"
+                            style="font-size: 2.5rem;max-width: 65%;margin: 0 auto;color: #fff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)">
                             Save the Date for Warcraft 30th Anniversary Direct
                         </h1>
-                        <p class="card-text" style="
-                            font-size: 1.25rem;
-                            max-width: 50%;
-                            margin: 20px auto;
-                            color: #ddd;
-                            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-                        ">
+                        <p class="card-text"
+                            style="font-size: 1.25rem;max-width: 50%;margin: 20px auto;color: #ddd;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
                             Join us November 13 at 10:00 am PST for a special presentation
                             celebrating 30 years of Warcraft and a look ahead at what's next.
                         </p>
-                        <a href="#" class="btn btn-outline-light" style="
-                            font-size: 1.2rem;
-                            padding: 10px 20px;
-                            max-width: 40%;
-                            margin: 20px auto 60px;
-                            color: #fff;
-                            border-color: #ccc;
-                        ">Learn More</a>
+                        <a href="#" class="btn btn-outline-light"
+                            style="font-size: 1.2rem;padding: 10px 20px;max-width: 40%;margin: 20px auto 60px;color: #fff;border-color: #ccc;">Learn
+                            More</a>
                     </div>
-                    <div class="position-absolute bottom-0 start-0 p-3" style="
-                        left: 20px; 
-                        font-size: 1rem;
-                        color: #888;
-                    ">
+                    <div class="position-absolute bottom-0 start-0 p-3"
+                        style="left: 20px; font-size: 1rem;color: #888;">
                         Adopt until January 7, 2025.
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid p-0">
         <div class="row g-0">
-            <!-- Card 1 (50% width on larger screens, full width on smaller screens) -->
             <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
-                    <div class="card text-white text-center" style="
-                background-color: #6f4f1f;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-              " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
+                    <div class="card text-white text-center"
+                        style="background-color: #6f4f1f; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
                         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-                        <!-- Image section with Bootstrap ratio for responsive sizing -->
                         <div class="ratio ratio-16x9">
                             <img src="7.webp" class="card-img-top" alt="Content Update Notes" />
                         </div>
-                        <!-- Text content below image -->
                         <div class="card-body">
                             <p class="card-text">The War Within</p>
                             <h3 class="card-title">Content Update Notes</h3>
@@ -379,20 +261,15 @@
                     </div>
                 </a>
             </div>
-
-            <!-- Card 2 (50% width on larger screens, full width on smaller screens) -->
             <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
-                    <div class="card text-white text-center" style="
-                background-color: #6f4f1f;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-              " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
+                    <div class="card text-white text-center"
+                        style="background-color: #6f4f1f;transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
                         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-                        <!-- Image section with Bootstrap ratio for responsive sizing -->
                         <div class="ratio ratio-16x9">
                             <img src="8.jpeg" class="card-img-top" alt="Hotfixes" />
                         </div>
-                        <!-- Text content below image -->
                         <div class="card-body">
                             <p class="card-text">Latest Updates</p>
                             <h3 class="card-title">Hotfixes</h3>
@@ -405,7 +282,6 @@
     <footer class="pt-5 pb-3" style="background-color: #2c1b0f; color: #d3c6b8">
         <div class="container">
             <div class="row">
-                <!-- Links Section -->
                 <div class="col-md-8 d-flex justify-content-center mb-4">
                     <a href="#" class="mx-3" style="color: #d3c6b8; text-decoration: none">Careers</a>
                     <a href="#" class="mx-3" style="color: #d3c6b8; text-decoration: none">About</a>
@@ -414,14 +290,11 @@
                     <a href="#" class="mx-3" style="color: #d3c6b8; text-decoration: none">Press</a>
                     <a href="#" class="mx-3" style="color: #d3c6b8; text-decoration: none">API</a>
                 </div>
-                <!-- Logo Section -->
                 <div class="col-md-4 d-flex justify-content-center align-items-center mb-4">
-                    <img src="9.webp" alt="Blizzard Logo" class="img-fluid"
-                        style="max-height: 50px" />
+                    <img src="9.webp" alt="Blizzard Logo" class="img-fluid" style="max-height: 50px" />
                 </div>
             </div>
             <div class="row">
-                <!-- Social Media Icons -->
                 <div class="col-md-8 d-flex justify-content-center align-items-center mb-3">
                     <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-twitter"></i></a>
                     <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-facebook"></i></a>
@@ -429,7 +302,6 @@
                     <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-youtube"></i></a>
                 </div>
-                <!-- Language Selector -->
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -451,7 +323,6 @@
                 </div>
             </div>
             <div class="row mt-3 border-top pt-3" style="border-color: #d3c6b8">
-                <!-- Legal Links -->
                 <div class="col text-center">
                     <p class="mb-0" style="color: #d3c6b8">
                         &copy; 2024 Blizzard Entertainment, Inc. All
@@ -469,8 +340,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
