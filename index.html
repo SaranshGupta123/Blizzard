@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,149 +12,291 @@
             text-decoration: underline;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
+
+<body class=" text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mt-4 mx-4 p-3 rounded"
+        style="font-size: 1.25rem;">
+        <div class="container px-5">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <div class="dropdown">
-                    <a class="nav-link p-0" href="#" id="blizzardDropdown" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="9.webp" alt="Blizzard" style="height: 30px;">
+                <div class="dropdown ms-4">
+                    <a class="nav-link p-0 dropdown-toggle d-flex align-items-center" href="#" id="blizzardDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="9.webp" alt="Blizzard" style="height: 40px;">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="blizzardDropdown">
-                        <li><a class="dropdown-item" href="#">Visit Blizzard.com</a></li>
-                        <li><a class="dropdown-item" href="#">All Games</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="blizzardDropdown"
+                        style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.1rem; min-width: 300px; padding: 15px;">
                         <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">You might also like
-                            this</li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="13.png" alt="War Within" style="height: 20px; margin-right: 10px;">
-                                World of Warcraft: The War Within
+                            <a class="dropdown-item d-flex align-items-center my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <i class="bi bi-globe"
+                                    style="font-size: 1.5rem; margin-right: 10px; padding: 2px; color: #f8f5f2;"></i>
+                                Visit Blizzard.com
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="14.png" alt="Cataclysm Classic" style="height: 20px; margin-right: 10px;">
-                                World of Warcraft: Cataclysm Classic
+                            <a class="dropdown-item d-flex align-items-center my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <i class="bi bi-grid-3x3-gap-fill"
+                                    style="font-size: 1.5rem; margin-right: 10px; padding: 2px; color: #f8f5f2;"></i>
+                                All Games
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="15.png" alt="Hearthstone" style="height: 20px; margin-right: 10px;">
-                                Hearthstone
+                            <hr class="dropdown-divider" style="background-color: #4b3535;">
+                        </li>
+                        <li class="dropdown-item text-uppercase"
+                            style="background-color: #2c1c1c; color: #b3a89a; font-size: 0.8rem; padding: 9px 13px;">
+                            You might also like
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-start my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <img src="13.png" alt="War Within"
+                                    style="height: 30px; width: 30px; object-fit: cover; margin-right: 10px;">
+                                <div style="width: calc(100% - 40px);">
+                                    <span class="fw-bold padding: 4px;">World of Warcraft: The War Within</span><br>
+                                    <small style="color: #b3a89a;">Expansion</small>
+                                    <span class="badge bg-warning text-dark ms-2" style="font-size: 0.8rem;">New</span>
+                                </div>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <img src="16.png" alt="Warcraft Rumble" style="height: 20px; margin-right: 10px;">
-                                Warcraft Rumble
+                            <a class="dropdown-item d-flex align-items-start my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <img src="14.png" alt="Cataclysm Classic"
+                                    style="height: 30px; width: 30px; object-fit: cover; margin-right: 10px;">
+                                <div style="width: calc(100% - 40px);">
+                                    <span class="fw-bold">World of Warcraft: Cataclysm Classic</span><br>
+                                    <small style="color: #b3a89a;">Expansion</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-start my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <img src="15.png" alt="Hearthstone"
+                                    style="height: 30px; width: 30px; object-fit: cover; margin-right: 10px;">
+                                <div style="width: calc(100% - 40px);">
+                                    <span class="fw-bold">Hearthstone</span><br>
+                                    <small style="color: #b3a89a;">Strategy Card Game</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-start my-1" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 8px 12px;">
+                                <img src="16.png" alt="Warcraft Rumble"
+                                    style="height: 30px; width: 30px; object-fit: cover; margin-right: 10px;">
+                                <div style="width: calc(100% - 40px);">
+                                    <span class="fw-bold">Warcraft Rumble</span><br>
+                                    <small style="color: #b3a89a;">Mobile Action Strategy</small>
+                                </div>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="dropdown d-flex align-items-center ms-3">
-                    <a class="nav-link p-0 d-flex align-items-center" href="#" id="gameInfoDropdown"
+                <a href="#" class="d-inline-block ms-4">
+                    <img src="12.png" alt="Game Icon" style="height: 50px; width: 50px; object-fit: cover;">
+                </a>
+                <div class="dropdown ms-4">
+                    <a class="nav-link p-0 d-flex align-items-center dropdown-toggle" href="#" id="gameInfoDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="12.png" alt="Game Icon" style="height: 30px;">
-                        <span class="ms-2 text-white">Game Info</span>
+                        <span class="text-white" style="font-size: 1.25rem;">Game Info</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="gameInfoDropdown"
-                        style="min-width: 250px;">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">Races</a></li>
-                        <li><a class="dropdown-item" href="#">Classes</a></li>
-                        <li><a class="dropdown-item" href="#">Returning Players</a></li>
-                        <li><a class="dropdown-item" href="#">Realm Status</a></li>
-                        <li><a class="dropdown-item" href="#">Content Update Notes</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="gameInfoDropdown"
+                        style="background-color: #2c1c1c; color: #f8f5f2; min-width: 300px;">
                         <li>
-                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Overview
+                            </a>
                         </li>
-                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">LORE</li>
-                        <li><a class="dropdown-item" href="#">Story & Media</a></li>
-                        <li><a class="dropdown-item" href="#">Warcraft Timeline</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Races
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Classes
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Returning Players
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Realm Status
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Content Update Notes
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider" style="background-color: #4b3535;">
+                        </li>
+
+                        <li class="dropdown-item"
+                            style="background-color: #2c1c1c; color: #b3a89a; font-weight: 400; font-size: 0.8rem;">
+                            LORE
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Story & Media
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.2rem; font-weight: 500; margin: 5px 0; padding: 10px 15px;">
+                                Warcraft Timeline
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="dropdown ms-3">
-                    <button class="btn btn-dark dropdown-toggle" type="button" id="expansionsDropdown"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown ms-4">
+                    <button class="btn btn-dark dropdown-toggle" style="font-size: 1.25rem;" type="button"
+                        id="expansionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         Expansions
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="expansionsDropdown">
-                        <li><a class="dropdown-item" href="#">The War Within</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
+                    <ul class="dropdown-menu" aria-labelledby="expansionsDropdown"
+                        style="background-color: #2c1c1c; color: #f8f5f2; min-width: 300px;">
+                        <li class="d-flex align-items-center" style="background-color: #2c1c1c; color: #f8f5f2;">
+                            <a class="dropdown-item" href="#"
+                                style="color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">The War
+                                Within</a>
                         </li>
-                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">Wow classic</li>
-                        <li><a class="dropdown-item" href="#">Cataclysm Classic</a></li>
-                    </ul>
-                </div>
-                <a class="nav-link text-white ms-3" href="#">News</a>
-                <div class="dropdown ms-3">
-                    <a class="nav-link text-white dropdown-toggle" href="#" id="communityDropdown" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Community
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="communityDropdown">
-                        <li><a class="dropdown-item" href="#">Forums</a></li>
-                        <li><a class="dropdown-item" href="#">Recruit a friend</a></li>
-                        <li><a class="dropdown-item" href="#">Mythic Dungeon</a></li>
-                        <li><a class="dropdown-item" href="#">Mythic Raid</a></li>
-                        <li><a class="dropdown-item" href="#">Player vs. Player</a></li>
                         <li>
-                            <hr class="dropdown-divider">
+                            <hr class="dropdown-divider" style="background-color: #4b3535;">
                         </li>
-                        <li class="dropdown-item text-white fw-bold" style="font-size: 0.75rem;">ESPORTS</li>
-                        <li><a class="dropdown-item" href="#">Tournaments</a></li>
-                    </ul>
-                </div>
-                <a class="nav-link text-white ms-3" href="#">Shop</a>
-                <div class="dropdown ms-3">
-                    <a class="nav-link p-0" href="#" id="accountDropdown" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="bi bi-person text-white"></i> Account
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark p-3" aria-labelledby="accountDropdown">
+                        <li class="dropdown-item"
+                            style="background-color: #2c1c1c; color: #b3a89a; font-weight: 400; font-size: 0.8rem; ">
+                            WOW CLASSIC
+                        </li>
+
                         <li>
-                            <a href="#" class="btn btn-primary w-100 d-flex align-items-center mb-2">
-                                <i class="bi bi-box-arrow-in-right me-2"></i>
-                                Log In
+                            <a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; font-size: 1.1rem; font-weight: 400; padding: 10px 15px;">
+                                Cataclysm Classic
                             </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">WoW Characters</a></li>
-                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                        <li><a class="dropdown-item" href="forms.html">Sign Up</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Support</a></li>
-                        <li><a class="dropdown-item" href="#">Shop</a></li>
-                        <li><a class="dropdown-item" href="#">Download Battle.net</a></li>
                     </ul>
                 </div>
-                <div class="ms-3">
-                    <a class="btn btn-warning me-2" href="#" role="button">Try Free</a>
-                    <a class="btn btn-danger" href="#" role="button">Subscribe Now</a>
+                <div class="dropdown ms-4">
+                    <a class="nav-link text-white dropdown-toggle" style="font-size: 1.25rem;" href="#"
+                        id="communityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Community
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="communityDropdown"
+                        style="background-color: #2c1c1c; color: #f8f5f2; min-width: 300px;">
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Forums</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Recruit
+                                a friend</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Mythic
+                                Dungeon</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Mythic
+                                Raid</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Player
+                                vs. Player</a></li>
+                        <li>
+                            <hr class="dropdown-divider" style="background-color: #4b3535;">
+                        </li>
+                        <li class="dropdown-item" style="background-color: #2c1c1c; color: #b3a89a; font-size: 0.9rem;">
+                            ESPORTS
+                        </li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1.1rem; font-weight: 400;">Tournaments</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown ms-4">
+                    <a class="nav-link p-0 dropdown-toggle" href="#" id="searchDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-search text-white" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark p-4" aria-labelledby="searchDropdown"
+                        style="background-color: #2c1c1c; width: 350px;">
+                        <li class="d-flex">
+                            <input type="text" class="form-control me-2" placeholder="Search..." aria-label="Search"
+                                style="background-color: #2c1c1c; color: #f8f5f2; border: 1px solid #4b3535; padding: 10px; font-size: 1rem;">
+                            <button class="btn btn-primary"
+                                style="background-color: #4b3535; border-color: #4b3535; padding: 10px 15px; font-size: 1rem;">Search</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown ms-4">
+                    <a class="nav-link p-0 dropdown-toggle" href="#" id="accountDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-person text-white" style="font-size: 1.75rem;"></i> <span
+                            style="font-size: 1.25rem;">Account</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark p-4" aria-labelledby="accountDropdown"
+                        style="background-color: #2c1c1c; width: 350px;">
+                        <li><a href="#" class="btn btn-primary w-100 d-flex align-items-center mb-3"
+                                style="background-color: #4b3535; border-color: #4b3535; padding: 10px; font-size: 1rem;"><i
+                                    class="bi bi-box-arrow-in-right me-2"></i> Log In</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">WoW
+                                Characters</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">Account
+                                Settings</a></li>
+                        <li><a class="dropdown-item" href="forms.html"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">Sign
+                                Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider" style="background-color: #4b3535;">
+                        </li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">Support</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">Shop</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"
+                                style="background-color: #2c1c1c; color: #f8f5f2; margin: 5px 0; padding: 10px; font-size: 1rem;">Download
+                                Battle.net</a></li>
+                    </ul>
+                </div>
+                <div class="ms-4">
+                    <a class="btn btn-warning me-2 " href="#" role="button">Try Free</a>
+                    <a class="btn btn-danger " href="#" role="button">Subscribe Now</a>
                 </div>
             </div>
         </div>
     </nav>
     <section class="jumbotron d-flex align-items-center pt-9"
         style="background-image: url('1.gif'); background-size: cover; background-position: center; color: #f8f8f2; padding-top: 120px;">
-        <div class="container-fluid p-5 text-center text-light"
-            style="background-image: url('your-hero-image.jpg'); background-size: cover; background-position: center;">
+        <div class="container-fluid p-5 text-center text-light">
             <h1 class="display-4 text-start ms-3">WORLD OF WARCRAFT®: THE WAR WITHIN™ NOW LIVE!</h1>
-            <p class="lead text-start ms-3" style="max-width: 50%; margin-right: auto;">
+            <p class="lead text-start ms-3" style="max-width: 90%; margin-right: auto;">
                 Get back in the fight as you defend Azeroth from the shadows below. Journey through never-before-seen
                 subterranean worlds filled with hidden wonders and lurking perils, down to the dark depths of the
                 nerubian empire, where the malicious Harbinger of the Void is gathering arachnid forces to bring Azeroth
                 to its knees.
             </p>
-            <div class="d-flex justify-content-start mt-3 ms-3">
-                <button class="btn btn-danger me-3">Purchase Today</button>
+            <div class="d-flex justify-content-start mt-3 ms-3 flex-column flex-sm-row">
+                <button class="btn btn-danger me-3 mb-3 mb-sm-0">Purchase Today</button>
                 <button class="btn btn-outline-light">Learn More</button>
             </div>
             <div class="d-flex justify-content-start mt-5 pt-5 ms-3">
@@ -164,8 +307,7 @@
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="#" class="card h-100 card-hover"
-                        style="border: none; background-color: transparent">
+                    <a href="#" class="card h-100 card-hover" style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="2.jpeg" class="card-img-top" alt="News 1"
                                 style="height: 180px; object-fit: cover" />
@@ -179,8 +321,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="#" class="card h-100 card-hover"
-                        style="border: none; background-color: transparent">
+                    <a href="#" class="card h-100 card-hover" style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="3.webp" class="card-img-top" alt="News 2"
                                 style="height: 180px; object-fit: cover" />
@@ -194,8 +335,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="#" class="card h-100 card-hover"
-                        style="border: none; background-color: transparent">
+                    <a href="#" class="card h-100 card-hover" style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="5.jpeg" class="card-img-top" alt="News 3"
                                 style="height: 180px; object-fit: cover" />
@@ -209,8 +349,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
-                    <a href="#" class="card h-100 card-hover"
-                        style="border: none; background-color: transparent">
+                    <a href="#" class="card h-100 card-hover" style="border: none; background-color: transparent">
                         <div style="position: relative">
                             <img src="6.jpg" class="card-img-top" alt="News 4"
                                 style="height: 180px; object-fit: cover" />
@@ -228,8 +367,9 @@
     </section>
     <div class="container-fluid p-0">
         <div class="card border-0 position-relative">
-            <div class="row g-0 align-items-center justify-content-center" style="background: url('4.webp') center/cover; padding: 40px 0; color: #ccc; background-color: #111; background-blend-mode: overlay;">
-                <div class="col-11 text-end" style="margin-right: 5%;">
+            <div class="row g-0 align-items-center justify-content-center"
+                style="background: url('4.webp') center/cover; padding: 40px 0; color: #ccc; background-color: #111; background-blend-mode: overlay;">
+                <div class="col-12 col-md-8 text-end" style="margin-right: 5%;">
                     <p class="mb-4 fw-bold text-white-50" style="font-size: 1.5rem;">
                         Learn what's ahead.
                     </p>
@@ -237,7 +377,8 @@
                         Save the Date for Warcraft 30th <br> Anniversary Direct
                     </h1>
                     <p class="card-text text-white-50" style="font-size: 1.25rem;">
-                        Join us November 13 at 10:00 am PST for a special presentation <br> celebrating 30 years of Warcraft and a look ahead at what's next.
+                        Join us November 13 at 10:00 am PST for a special presentation <br> celebrating 30 years of
+                        Warcraft and a look ahead at what's next.
                     </p>
                     <a href="#" class="btn btn-outline-light mt-4" style="font-size: 1.2rem; padding: 10px 20px;">
                         Learn More
@@ -248,7 +389,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
     <div class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-md-6">
@@ -348,5 +489,21 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .navbar .dropdown-item {
+            font-size: 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+        }
+        
+    </style>
 </body>
+
 </html>
