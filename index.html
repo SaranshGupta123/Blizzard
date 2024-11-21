@@ -7,17 +7,502 @@
     <title>Blizzard Games</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         .text-warning:hover {
             text-decoration: underline;
         }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+            height: 70px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            margin: 0;
+        }
+
+        .navbar .logo-img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .navbar .nav-items {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .action-items {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .navbar .dropdown {
+            position: relative;
+        }
+
+        .navbar .nav-link,
+        .navbar .btn,
+        .navbar .dropdown-item {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border: none;
+            background-color: transparent;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .btn:hover,
+        .navbar .dropdown-item:hover {
+            background-color: #d9f3f28e;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .navbar .btn-try-free,
+        .navbar .btn-subscribe {
+            border-radius: 5px;
+            padding: 0.3rem 0.8rem;
+            white-space: nowrap;
+        }
+
+        .navbar .btn-try-free {
+            background-color: #3f1313;
+            color: #fff;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .navbar .btn-subscribe {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .navbar .btn-try-free:hover {
+            background-color: #3f1313;
+        }
+
+        .navbar .btn-subscribe:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar .nav-items,
+        .navbar .action-items {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar .nav-link,
+        .navbar .btn {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding: 0 1rem;
+        }
+
+        .action-items {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-link,
+        .btn {
+            padding: 0.5rem 1rem;
+            margin: 0;
+        }
+
+        .dropdown-menu-left {
+            left: auto !important;
+            right: 0 !important;
+            top: 100% !important;
+            margin-top: 0.25rem;
+            transform: translateX(-100%);
+        }
+
+        .navbar .btn:hover,
+        .navbar .nav-link:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .navbar .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .btn:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .hover-box {
+            display: inline-block;
+            padding: 5px 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #d3c6b8;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hover-box:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #d3c6b8;
+        }
+
+        .icon-hover {
+            display: inline-block;
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: #d3c6b8;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .icon-hover:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #d3c6b8;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+        footer img {
+            max-height: 50px;
+        }
+
+        .dropdown {
+            margin-top: -10px;
+        }
+
+        footer div>a {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        @media (min-width: 992px) {
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown-toggle::after {
+                transition: transform 0.2s;
+            }
+
+            .dropdown:hover .dropdown-toggle::after {
+                transform: rotate(180deg);
+            }
+
+            .navbar .logo {
+                display: none;
+            }
+
+            .navbar .nav-items {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-grow: 1;
+                margin: 0 1rem;
+            }
+
+            .navbar .action-items {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .navbar .nav-link,
+            .navbar .btn {
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            .navbar .btn-subscribe:hover {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+            .navbar .btn-try-free:hover {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+            .dropdown-menu-left {
+                left: auto !important;
+                right: 10px;
+                transform: none;
+            }
+
+            .card {
+                background-color: #7c761d;
+                border: 1px solid #dfe209;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(209, 77, 77, 0.1);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                padding: 1rem;
+                color: #333;
+            }
+
+            .card:hover {
+                background-color: #e6e20b;
+                color: #000;
+            }
+            #threeDotDropdown{
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .nav-items {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                margin: 0;
+                padding: 0.5rem 1rem;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .nav-link,
+            .btn {
+                font-size: 1.2rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-link {
+                margin-right: 5px;
+                margin-left: 20px;
+            }
+
+            .btn {
+                margin-right: 10px;
+            }
+
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: -75%;
+                height: 100vh;
+                width: 75%;
+                background-color: rgba(44, 28, 28, 0.8);
+                z-index: 1050;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                padding-top: 70px;
+            }
+
+            .navbar-collapse.show {
+                left: 0;
+            }
+
+            .navbar-toggler {
+                position: absolute;
+                top: 15px;
+                left: 12px;
+                z-index: 1100;
+            }
+
+            .action-items {
+                position: absolute;
+                right: 20px;
+                z-index: 1100;
+            }
+
+            .navbar .logo {
+                display: flex !important;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .navbar-collapse .btn-try-free,
+            .navbar-collapse .btn-subscribe {
+                width: auto;
+                margin-top: 0px;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .navbar-collapse .btn-try-free {
+                background-color: #3f1313;
+                color: #ffffff;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .navbar-collapse .btn-try-free:hover {
+                background-color: #218838;
+                transform: scale(1.05);
+            }
+
+            .navbar-collapse .btn-subscribe {
+                background-color: #007bff;
+                color: #ffffff;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .navbar-collapse .btn-subscribe:hover {
+                background-color: #0056b3;
+                transform: scale(1.05);
+            }
+
+            .navbar .btn-try-free,
+            .navbar .btn-subscribe {
+                display: block;
+                width: 95%;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .navbar .btn-try-free {
+                background-color: #28a745;
+            }
+
+            .navbar .btn-subscribe {
+                background-color: #007bff;
+            }
+
+            .dropdown-menu-left {
+                left: auto !important;
+                right: 10px;
+                transform: none;
+            }
+
+            .navbar .nav-link,
+            .navbar .btn {
+                font-size: 1rem;
+                padding: 0.7rem 1.2rem;
+                margin: 0.2rem;
+            }
+
+            .btn-try-free,
+            .btn-subscribe {
+                width: 100%;
+                text-align: center;
+            }
+            footer .row {
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center;
+                text-align: center; 
+                gap: 15px;
+            }
+        
+            footer .col-md-6,
+            footer .col-12 {
+                flex: 1 1 100%; 
+            }
+        
+            footer img {
+                max-height: 40px; 
+                margin-top: 40px;
+            }
+        
+            footer a {
+                display: inline-block;
+                margin: 5px 10px; 
+            }
+        
+            footer p {
+                font-size: 12px; 
+            }
+        
+            
+            footer .dropdown {
+                order: 1; 
+                width: 100%; 
+                margin-top: 10px;
+            }
+        
+            footer .dropdown a {
+                display: inline-block;
+                text-align: center; 
+            }
+        
+            footer .icon-hover {
+                margin: 5px; 
+                margin-right: 100px;
+            }
+            footer .icon{
+                margin-right: 80px;
+            }
+        }
     </style>
 </head>
 
-<body class=" text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top mt-2 mx-3 p-1 rounded" style="font-size: 1rem; background-color: rgba(44, 28, 28, 0.8);">
+<body class="text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top mt-2 mx-3 p-1 rounded"
+        style="font-size: 1rem; background-color: rgba(44, 28, 28, 0.8);">
         <div class="container px-1">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #444444;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="background-color: #444444;">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="logo">
@@ -36,10 +521,12 @@
                         </form>
                     </div>
                     <div class="dropdown my-1">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="blizzardDropdown"  data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="blizzardDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="9.webp" alt="Blizzard" style="height: 35px;">
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="blizzardDropdown" style="background-color: #3b2121; min-width: 300px; padding: 0;">
+                        <ul class="dropdown-menu" aria-labelledby="blizzardDropdown"
+                            style="background-color: #3b2121; min-width: 300px; padding: 0;">
                             <li style="background-color: #2c1c1c;">
                                 <a class="dropdown-item d-flex align-items-center"
                                     style="background-color: #2c1c1c; color: #f6fbff; padding: 8px;" href="#">
@@ -140,7 +627,6 @@
                         </ul>
                     </div>
                     <div class="dropdown my-2">
-
                         <button class="btn btn-dark dropdown-toggle" style="font-size: 1rem;" type="button"
                             id="expansionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="badge bg-warning text-dark ms-2">New</span>
@@ -162,8 +648,8 @@
                                 style="background-color: #110c0c; color: #b3a89a; font-weight: 400; font-size: 0.8rem; padding: 0;">
                                 <p style="margin: 0; padding: 10px 20px; font-size: 0.8rem;">WOW CLASSIC</p>
                                 <a class="dropdown-item" href="#"
-                                    style="background-color: #110c0c; color: #f8f5f2; font-size: 1rem; font-weight: 400; padding: 10px 20px; margin: 0;">
-                                    Cataclysm Classic
+                                    style="background-color: #110c0c; color: #f8f5f2; font-size: 1rem; font-weight: 400; padding: 10px 20px; margin: 0;">Cataclysm
+                                    Classic
                                 </a>
                             </li>
                         </ul>
@@ -187,6 +673,7 @@
                                     style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 20px; font-size: 1.1rem; font-weight: 400; margin: 0;">
                                     Recruit a Friend
                                 </a>
+                                <p style="margin: 0; padding: 10px 20px; font-size: 0.8rem; color: #b3a89a;">LEADERBOARDS</p>
                                 <a class="dropdown-item" href="#"
                                     style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 20px; font-size: 1.1rem; font-weight: 400; margin: 0;">
                                     Mythic Dungeon
@@ -249,8 +736,9 @@
                         </ul>
                     </div>
                 </div>
-                <a class="btn btn-try-free" style="font-size: 1rem; background-color: #20e019; margin-left:5px;" href="#" role="button">Try Free</a>
-                <a class="btn btn-subscribe" style="font-size: 1rem; background-color: #df1133; margin-left:5px;" href="#" role="button">Subscribe Now</a>
+                <a class="btn btn-try-free" style="font-size: 1rem; background-color: #270f0f; margin-left:5px;"
+                    href="#" role="button">Try Free</a>
+                <a class="btn btn-subscribe" style="font-size: 1rem; margin-left:5px; background-color: #aa2409;"  href="#" role="button">Subscribe Now</a>
             </div>
             <div class="action-items">
                 <div class="dropdown my-2">
@@ -259,7 +747,7 @@
                         <i class="bi bi-person text-white" style="font-size: 1.2rem;"></i>
                         <span class="d-none d-lg-inline-block" style="font-size: 1rem;">Account</span>
                     </a>
-                    <ul class="dropdown-menu p-4" aria-labelledby="accountDropdown"
+                    <ul class="dropdown-menu-left dropdown-menu p-4" aria-labelledby="accountDropdown"
                         style="background-color: #110c0c; width: 350px; margin: 0; padding: 0; border: none;">
                         <li>
                             <a href="#" class="btn btn-primary w-100 d-flex align-items-center mb-3"
@@ -270,55 +758,65 @@
                         <li style="background-color: #2c1c1c; padding: 0; margin: 0;">
                             <a class="dropdown-item" href="#"
                                 style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                WoW Characters
+                                <i class="bi bi-people me-2"></i> WoW Characters
                             </a>
                             <a class="dropdown-item" href="#"
                                 style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                Account Settings
+                                <i class="bi bi-gear me-2"></i> Account Settings
                             </a>
                             <a class="dropdown-item" href="forms.html"
                                 style="background-color: #2c1c1c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                Sign Up
+                                <i class="bi bi-pencil-square me-2"></i> Sign Up
                             </a>
                         </li>
                         <li style="background-color: #110c0c; padding: 0; margin: 0;">
                             <a class="dropdown-item" href="#"
                                 style="background-color: #110c0c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                Support
+                                <i class="bi bi-question-circle me-2"></i> Support
                             </a>
                             <a class="dropdown-item" href="#"
                                 style="background-color: #110c0c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                Shop
+                                <i class="bi bi-basket me-2"></i> Shop
                             </a>
                             <a class="dropdown-item" href="#"
                                 style="background-color: #110c0c; color: #f8f5f2; padding: 10px 15px; font-size: 1rem; margin: 0;">
-                                Download Battle.net
+                                <i class="bi bi-cloud-download me-2"></i> Download Battle.net
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </div>
     </nav>
     <section class="jumbotron d-flex align-items-center pt-9"
         style="background-image: url('1.gif'); background-size: cover; background-position: center; color: #f8f8f2; padding-top: 120px;">
         <div class="container-fluid p-5 text-center text-light">
-            <h1 class="display-4 text-start ms-3">WORLD OF WARCRAFT®: THE WAR WITHIN™ NOW LIVE!</h1>
+            <h1 class="display-4 text-start ms-3 fw-bold" style="font-weight: 800;">WORLD OF WARCRAFT&reg;: THE WAR
+                WITHIN&trade;
+                NOW LIVE!</h1>
+
             <p class="lead text-start ms-3" style="max-width: 90%; margin-right: auto;">
-                Get back in the fight as you defend Azeroth from the shadows below. Journey through never-before-seen
-                subterranean worlds filled with hidden wonders and lurking perils, down to the dark depths of the
-                nerubian empire, where the malicious Harbinger of the Void is gathering arachnid forces to bring Azeroth
-                to its knees.
+                Get back in the fight as you defend Azeroth from the shadows below. Journey <br> through
+                never-before-seen
+                subterranean worlds filled with hidden wonders and <br> lurking perils, down to the dark depths of the
+                nerubian empire, where the <br>malicious Harbinger of the Void is gathering arachnid forces to bring
+                Azeroth
+                to its <br>knees.
             </p>
+
             <div class="d-flex justify-content-start mt-3 ms-3 flex-column flex-sm-row">
-                <button class="btn btn-danger me-3 mb-3 mb-sm-0">Purchase Today</button>
-                <button class="btn btn-outline-light">Learn More</button>
+                <button class="btn btn-outline-warning btn-lg me-3 mb-3 mb-sm-0" style="background: rgba(159, 22, 0, .6);">Purchase Today</button>
+                <button class="btn btn-outline-warning btn-lg">Learn More</button>
             </div>
+
             <div class="d-flex justify-content-start mt-5 pt-5 ms-3">
                 <div class="d-flex align-items-center">
-                    <span class="me-2 text-uppercase fw-bold text-info small">LATEST NEWS & UPDATES</span>
-                    <a href="#" class="text-white text-decoration-underline-hover-info">View all news</a>
+                    <span class="me-2 text-uppercase fw-bold small" style="font-size: 1.1rem;">LATEST NEWS &amp;
+                        UPDATES</span>
+                    <a href="#" class="text-decoration-underline-hover-info" style="color:yellow">View all news</a>
                 </div>
             </div>
+
             <div class="row justify-content-center mt-4">
                 <div class="col-md-3 col-6 mb-3">
                     <a href="#" class="card h-100 card-hover" style="border: none; background-color: transparent">
@@ -380,11 +878,11 @@
         </div>
     </section>
     <div class="container-fluid p-0">
-        <div class="card border-0 position-relative">
+        <div class=" border-0 position-relative">
             <div class="row g-0 align-items-center justify-content-center"
                 style="background: url('4.webp') center/cover; padding: 40px 0; color: #ccc; background-color: #111; background-blend-mode: overlay;">
-                <div class="col-12 col-md-8 text-end" style="margin-right: 0; padding-right: 1rem;">
-                    <p class="mb-4 fw-bold text-white-50" style="font-size: 1.5rem;">
+                <div class="col-10 col-md-11 text-end">
+                    <p class="fw-bold text-white-50" style="font-size: 1.5rem;">
                         Learn what's ahead.
                     </p>
                     <h1 class="card-title fw-bolder text-white" style="font-size: 2.5rem;">
@@ -394,7 +892,8 @@
                         Join us November 13 at 10:00 am PST for a special presentation <br> celebrating 30 years of
                         Warcraft and a look ahead at what's next.
                     </p>
-                    <a href="#" class="btn btn-outline-light mt-4" style="font-size: 1.2rem; padding: 10px 20px;">
+                    <a href="#" class="btn btn-outline-warning mt-4"
+                        style="font-size: 1.2rem; padding: 10px 20px; margin-bottom:50px">
                         Learn More
                     </a>
                 </div>
@@ -409,15 +908,15 @@
             <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
                     <div class="card text-white text-center"
-                        style="background-color: #6f4f1f; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                        style="background-color: #211510; transition: transform 0.3s ease, box-shadow 0.3s ease;"
                         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
                         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
                         <div class="ratio ratio-16x9">
                             <img src="7.webp" class="card-img-top" alt="Content Update Notes" />
                         </div>
                         <div class="card-body">
-                            <p class="card-text text-warning">The War Within</p>
-                            <h3 class="card-title text-warning">Content Update Notes</h3>
+                            <p class="card-text text-white" style="font-size:1.2rem;">The War Within</p>
+                            <h3 class="card-title text-warning" style="font-size:2.8rem;">Content Update Notes</h3>
                         </div>
                     </div>
                 </a>
@@ -425,82 +924,76 @@
             <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
                     <div class="card text-white text-center"
-                        style="background-color: #6f4f1f;transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                        style="background-color: #211510;transition: transform 0.3s ease, box-shadow 0.3s ease;"
                         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255, 255, 255, 0.6)';"
                         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
                         <div class="ratio ratio-16x9">
                             <img src="8.jpeg" class="card-img-top" alt="Hotfixes" />
                         </div>
                         <div class="card-body">
-                            <p class="card-text text-warning">Latest Updates</p>
-                            <h3 class="card-title text-warning">Hotfixes</h3>
+                            <p class="card-text text-white" style="font-size:1.2rem;">Latest Updates</p>
+                            <h3 class="card-title text-warning" style="font-size:2.8rem;">Hotfixes</h3>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-    <footer class="pt-5 pb-3" style="background-color: #2c1b0f; color: #d3c6b8;">
+    <footer class="py-5" style="background-color: #211510; color: #d3c6b8;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 d-flex justify-content-center flex-wrap mb-4">
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">Careers</a>
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">About</a>
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">Support</a>
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">Contact Us</a>
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">Press</a>
-                    <a href="#" class="mx-2 my-1"
-                        style="color: #d3c6b8; text-decoration: none; font-size: 0.9rem;">API</a>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center mb-4">
-                    <img src="9.webp" alt="Blizzard Logo" class="img-fluid" style="max-height: 50px;" />
+                <div class="col-12 text-start mb-3">
+                    <a href="#" class="mx-2 text-decoration-none fw-bold hover-box">Careers</a>
+                    <a href="#" class="mx-2 text-decoration-none hover-box">About</a>
+                    <a href="#" class="mx-2 text-decoration-none hover-box">Support</a>
+                    <a href="#" class="mx-2 text-decoration-none hover-box">Contact Us</a>
+                    <a href="#" class="mx-2 text-decoration-none hover-box">Press</a>
+                    <a href="#" class="mx-2 text-decoration-none hover-box">API</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 d-flex justify-content-center align-items-center mb-3">
-                    <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-reddit"></i></a>
-                    <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="mx-2" style="color: #d3c6b8"><i class="bi bi-youtube"></i></a>
+
+            <div class="row align-items-start mt-4">
+                <div class="col-md-6 d-flex align-items-start">
+                    <div class="me-3" style="margin-top: 15px;">
+                        <img src="9.webp" alt="Logo" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                    <div>
+                        <p class="mb-1" style="font-size: 14px; margin-left:10px;">
+                            &copy; 2024 Your Company Name. All trademarks are the properties of their respective owners.
+                        </p>
+                        <div>
+                            <a href="#" class="hover-box">Privacy</a>
+                            <a href="#" class="hover-box">Legal</a>
+                            <a href="#" class="hover-box">Terms</a>
+                            <a href="#" class="hover-box">Cookie Policy</a>
+                            <a href="#" class="hover-box">Cookie Settings</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" style="color: #d3c6b8; text-decoration: none;">
+
+                <div class="col-md-6 d-flex flex-column align-items-end">
+                    <div class="dropdown mb-3" style="margin-top: -73px;">
+                        <a class="dropdown-toggle hover-box" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-globe"></i> English (US)
                         </a>
                         <ul class="dropdown-menu" style="background-color: #2c1b0f;">
-                            <li><a class="dropdown-item" href="#" style="color: #d3c6b8;">English (US)</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: #d3c6b8;">Spanish (ES)</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: #d3c6b8;">French (FR)</a></li>
+                            <li><a class="dropdown-item hover-box" href="#">English (US)</a></li>
+                            <li><a class="dropdown-item hover-box" href="#">Spanish (ES)</a></li>
+                            <li><a class="dropdown-item hover-box" href="#">French (FR)</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-3 border-top pt-3" style="border-color: #d3c6b8;">
-                <div class="col text-center">
-                    <p class="mb-0" style="color: #d3c6b8;">
-                        &copy; 2024 Blizzard Entertainment, Inc. All
-                        <a href="#" style="color: #d3c6b8; text-decoration: none;">trademarks</a>
-                        are the properties of their respective owners.
-                    </p>
-                    <div class="mt-2">
-                        <a href="#" class="mx-2" style="color: #d3c6b8; text-decoration: none;">Privacy</a>
-                        <a href="#" class="mx-2" style="color: #d3c6b8; text-decoration: none;">Legal</a>
-                        <a href="#" class="mx-2" style="color: #d3c6b8; text-decoration: none;">Terms</a>
-                        <a href="#" class="mx-2" style="color: #d3c6b8; text-decoration: none;">Cookie Policy</a>
-                        <a href="#" class="mx-2" style="color: #d3c6b8; text-decoration: none;">Cookie Settings</a>
+                    <div class="icon"  style="margin-top: 25px;">
+                        <a href="#" class="icon-hover mx-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="icon-hover mx-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="icon-hover mx-2"><i class="bi bi-reddit"></i></a>
+                        <a href="#" class="icon-hover mx-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="icon-hover mx-2"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -518,259 +1011,6 @@
             });
         });
     </script>
-    <style>
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #300e0e;
-            height: 70px;
-            padding: 0;
-        }
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .navbar .logo-img {
-            width: 50px;
-            height: 50px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .navbar .logo-img:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-        .navbar .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-grow: 1;
-            justify-content: center;
-        }
-        .navbar .action-items {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .navbar .nav-link,
-        .navbar .btn,
-        .navbar .dropdown-item {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border: none;
-            background-color: transparent;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .navbar .nav-link:hover,
-        .navbar .btn:hover,
-        .navbar .dropdown-item:hover {
-            background-color: #ff6f61;
-            color: #ffffff;
-            border-radius: 8px;
-        }
-        .navbar .btn-try-free,
-        .navbar .btn-subscribe {
-            border-radius: 5px;
-            padding: 0.3rem 0.8rem;
-            white-space: nowrap;
-            
-        }
-        .navbar .btn-try-free {
-            background-color: #28a745;
-            color: #ffffff;
-        }
-        .navbar .btn-subscribe {
-            background-color: #007bff;
-            color: #ffffff;
-        }
-        .navbar .btn-try-free:hover {
-            background-color: #218838;
-        }
-        .navbar .btn-subscribe:hover {
-            background-color: #0056b3;
-        }
-        .navbar .nav-items,
-        .navbar .action-items {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .navbar .nav-link,
-        .navbar .btn {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.875rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            background-color: transparent;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin: 0;
-        }
-        .nav-items {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-grow: 1;
-            padding: 0 1rem;
-        }
-        .action-items {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .nav-link,
-        .btn {
-            padding: 0.5rem 1rem;
-            margin: 0;
-        }
-        
-        @media (min-width: 992px) {
-            .dropdown:hover .dropdown-menu {
-                display: block;
-            }
-            .dropdown-menu {
-                display: none;
-            }
-            .dropdown-toggle::after {
-                transition: transform 0.2s;
-            }
-            .dropdown:hover .dropdown-toggle::after {
-                transform: rotate(180deg);
-            }
-            .navbar .logo {
-                display: none;
-            }
-            .navbar .nav-items {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-grow: 1;
-                margin: 0 1rem;
-            }
-            .navbar .action-items {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-            .navbar .nav-link,
-            .navbar .btn {
-                margin-right: 0;
-                margin-left: 0;
-            }
-            .navbar .btn-subscribe:hover {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-            .navbar .btn-try-free:hover {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-            
-        }
-        @media (max-width: 767px) {
-            .navbar {
-                flex-wrap: wrap;
-                height: 70px;
-            }
-            .nav-items {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-                order: 2;
-            }
-            .logo {
-                order: 1;
-            }
-            .nav-link,
-            .btn {
-                font-size: 1.2rem;
-                padding: 0.5rem 1rem;
-            }
-            .nav-link {
-                margin-right: 5px;
-                margin-left: 20px;
-            }
-            .btn {
-                margin-right: 10px;
-            }
-            .navbar-collapse {
-                position: fixed;
-                top: 0;
-                left: -75%;
-                height: 100vh;
-                width: 75%;
-                background-color: rgba(44, 28, 28, 0.8);
-                z-index: 1050;
-                transition: left 0.3s ease;
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                padding-top: 70px;
-            }
-            .navbar-collapse.show {
-                left: 0;
-            }
-            .navbar-toggler {
-                position: absolute;
-                top: 15px;
-                left: 12px;
-                z-index: 1100;
-            }
-            .action-items {
-                position: absolute;
-                right: 20px;
-                z-index: 1100;
-            }
-            .navbar .logo {
-                display: flex !important;
-                justify-content: center;
-                width: 100%;
-            }
-            .navbar-collapse .btn-try-free,
-            .navbar-collapse .btn-subscribe {
-                width: auto;
-                margin-top: 0px;
-                padding: 0.5rem 1rem;
-                font-size: 1rem;
-                text-align: center;
-            }
-            .navbar-collapse .btn-try-free {
-                background-color: #28a745;
-                color: #ffffff;
-                border-radius: 5px;
-                font-weight: bold;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-            }
-            .navbar-collapse .btn-try-free:hover {
-                background-color: #218838;
-                transform: scale(1.05);
-            }
-            .navbar-collapse .btn-subscribe {
-                background-color: #007bff;
-                color: #ffffff;
-                border-radius: 5px;
-                font-weight: bold;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-            }
-            .navbar-collapse .btn-subscribe:hover {
-                background-color: #0056b3;
-                transform: scale(1.05);
-            }
-            .navbar .btn-try-free,
-            .navbar .btn-subscribe {
-                display: block;
-                width: 95%;
-                margin-top: 10px;
-                text-align: center;
-            }
-            .navbar .btn-try-free {
-                background-color: #28a745;
-            }
-            .navbar .btn-subscribe {
-                background-color: #007bff;
-            }
-        }
-    </style>
 </body>
+
 </html>
