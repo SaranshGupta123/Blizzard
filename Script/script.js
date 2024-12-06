@@ -1,21 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("click", function (event) {
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const searchDropdownMenu = document.getElementById("searchDropdownMenu");
-        const searchDropdownToggle = document.getElementById("searchDropdownToggle");
-        if (
-            navbarCollapse.classList.contains("show") &&
-            !navbarCollapse.contains(event.target) &&
-            !navbarToggler.contains(event.target)
-        ) {
-            navbarToggler.click();
-        }
-        if (searchDropdownToggle.contains(event.target)) {
-            searchDropdownMenu.style.display =
-                searchDropdownMenu.style.display === "block" ? "none" : "block";
-        } else if (!searchDropdownMenu.contains(event.target)) {
-            searchDropdownMenu.style.display = "none";
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.createElement('div');
+    sidebar.id = 'mobile-sidebar';
+    sidebar.innerHTML = `
+        <div class="header">
+            <img src="images/15.png" alt="Blizzard Logo" style="height:100px; margin-top:50px"/>
+            <i class="bi bi-x close-btn"></i>
+            <a href="#" class="login-btn">Log In</a>
+        <a href="#"><i class="bi bi-person"></i>WoW Characters</a>
+        <a href="#"><i class="bi bi-gear"></i>Account Settings</a>
+        <a href="forms.html"><i class="bi bi-pencil-square"></i>Sign Up</a>
+        </div>
+        <a href="#"><i class="bi bi-question-circle"></i>Support</a>
+        <a href="#"><i class="bi bi-shop"></i>Shop</a>
+        <a href="#"><i class="bi bi-phone"></i>Battle.net Mobile App</a>
+    `;
+    document.body.appendChild(sidebar);
+    const userIcon = document.getElementById('accountDropdown');
+    const closeBtn = sidebar.querySelector('.close-btn');
+
+    userIcon.addEventListener('click', (e) => {
+        e.preventDefault();
+        sidebar.style.right = '0';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.style.right = '-100%';
+    });
+    document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && e.target !== userIcon) {
+            sidebar.style.right = '-100%';
         }
     });
 });
