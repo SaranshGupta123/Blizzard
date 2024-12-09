@@ -1,14 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.createElement('div');
     sidebar.id = 'mobile-sidebar';
+    const hamburgerButton = document.querySelector('.navbar-toggler');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const navbarNav = document.getElementById('navbarNav'); 
+    const searchToggle = document.getElementById("searchDropdown"); 
+    const searchTray = document.getElementById("searchTray"); 
+    hamburgerButton.addEventListener('click', function () {
+        const isMenuOpen = navbarNav.classList.contains('show'); 
+        if (isMenuOpen) {
+            closeIcon.classList.add('d-none');
+            hamburgerIcon.classList.remove('d-none');
+        } else {
+            hamburgerIcon.classList.add('d-none');
+            closeIcon.classList.remove('d-none');
+        }
+    });
+    navbarNav.addEventListener('hidden.bs.collapse', () => {
+        closeIcon.classList.add('d-none');
+        hamburgerIcon.classList.remove('d-none');
+    });
+    navbarNav.addEventListener('shown.bs.collapse', () => {
+        hamburgerIcon.classList.add('d-none');
+        closeIcon.classList.remove('d-none');
+    });
+    searchToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        searchTray.style.display = searchTray.style.display === "block" ? "none" : "block";
+    });
+    document.addEventListener("click", function (event) {
+        if (!searchTray.contains(event.target) && !searchToggle.contains(event.target)) {
+            searchTray.style.display = "none";
+        }
+    });
     sidebar.innerHTML = `
         <div class="header">
             <img src="images/15.png" alt="Blizzard Logo" style="height:100px; margin-top:50px"/>
             <i class="bi bi-x close-btn"></i>
             <a href="#" class="login-btn">Log In</a>
-        <a href="#"><i class="bi bi-person"></i>WoW Characters</a>
-        <a href="#"><i class="bi bi-gear"></i>Account Settings</a>
-        <a href="forms.html"><i class="bi bi-pencil-square"></i>Sign Up</a>
+            <a href="#"><i class="bi bi-person"></i>WoW Characters</a>
+            <a href="#"><i class="bi bi-gear"></i>Account Settings</a>
+            <a href="forms.html"><i class="bi bi-pencil-square"></i>Sign Up</a>
         </div>
         <a href="#"><i class="bi bi-question-circle"></i>Support</a>
         <a href="#"><i class="bi bi-shop"></i>Shop</a>
@@ -22,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         sidebar.style.right = '0';
     });
-
     closeBtn.addEventListener('click', () => {
         sidebar.style.right = '-100%';
     });
@@ -34,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener("DOMContentLoaded", function () {
     const languageDropdownToggle = document.getElementById("languageDropdown");
-    const languageDropdownMenu = document.querySelector("#languageDropdown + .dropdown-menu");
+    const languageDropdownMenu = languageDropdownToggle.nextElementSibling; 
     languageDropdownToggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        languageDropdownMenu.style.display =
-            languageDropdownMenu.style.display === "block" ? "none" : "block";
+        event.preventDefault(); 
+        const isDisplayed = languageDropdownMenu.style.display === "block";
+        languageDropdownMenu.style.display = isDisplayed ? "none" : "block";
     });
     document.addEventListener("click", function (event) {
         if (
