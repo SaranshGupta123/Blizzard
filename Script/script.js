@@ -6,7 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeIcon = document.getElementById('closeIcon');
     const navbarNav = document.getElementById('navbarNav'); 
     const searchToggle = document.getElementById("searchDropdown"); 
-    const searchTray = document.getElementById("searchTray"); 
+    const searchTray = document.getElementById("searchTray");
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            const dropdownMenu = this.nextElementSibling; // Get the associated dropdown menu
+            const isDisplayed = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isDisplayed ? 'none' : 'block';
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (event) {
+        dropdownToggles.forEach(toggle => {
+            const dropdownMenu = toggle.nextElementSibling;
+            if (!toggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    }); 
     hamburgerButton.addEventListener('click', function () {
         const isMenuOpen = navbarNav.classList.contains('show'); 
         if (isMenuOpen) {
@@ -36,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     sidebar.innerHTML = `
         <div class="header">
-            <img src="images/15.png" alt="Blizzard Logo" style="height:100px; margin-top:50px"/>
-            <i class="bi bi-x close-btn"></i>
+            <img src="images/9.webp" alt="Blizzard Logo" style="height:40px; margin-top:0px"/>
+            <i class="bi bi-x close-btn" style="background-color: #f0f6f633; width:30px; height:40px"></i>
             <a href="#" class="login-btn">Log In</a>
             <a href="#"><i class="bi bi-person"></i>WoW Characters</a>
             <a href="#"><i class="bi bi-gear"></i>Account Settings</a>

@@ -349,7 +349,6 @@ footer div>a {
 .footer .dropdown-menu .dropdown-item {
     font-weight: 400;
 }
-
 @media (min-width: 992px) {
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -541,6 +540,24 @@ footer div>a {
         justify-content: center;
         align-items: center;
     }
+    .card-hover:hover .card-img-top {
+        border: 2px solid yellow !important;
+        box-shadow: none;
+        border-radius: none;
+    }
+    .card-hover:hover p {
+        color: #ffffff;
+    }
+    #searchTray{
+        margin-left: -150px !important;
+    }
+    #footer-1{
+        display: flex;
+        margin-left: 370px;
+    }
+    #footer-2{
+        margin-left: 40px;
+    }
 }
 @media (max-width: 767px) {
     .collapse.navbar-collapse {
@@ -592,7 +609,7 @@ footer div>a {
         left: -75%;
         height: 100vh;
         width: 75%;
-        background-color: rgba(44, 28, 28, 0.8);
+        background-color: rgb(44, 28, 28);
         z-index: 1050;
         transition: left 0.3s ease;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
@@ -822,5 +839,8 @@ footer div>a {
     }
     #shop{
         margin-left: -5px;
+    }
+    #icon-1 {
+        display: none !important;
     }
 }
