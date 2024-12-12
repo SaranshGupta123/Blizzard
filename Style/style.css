@@ -22,8 +22,8 @@
     border-radius: 0px;
 }
 .btn-purchase-today:hover {
-    background-color: red !important;
-    color: yellow;
+    background-color: rgba(245, 3, 3, 0.685) !important;
+    color: yellow !important;
     border: solid 1px yellow;
     border-radius: 0px;
 }
@@ -34,8 +34,8 @@
     border-radius: 0px;
 }
 .btn-outline-warning:hover {
-    background-color: yellow;
-    color: #000;
+    background-color: rgba(204, 204, 28, 0.74);
+    color: yellow;
     border: solid 1px yellow;
     border-radius: 0px;
 }
@@ -93,7 +93,7 @@
 .navbar .nav-link:hover,
 .navbar .btn:hover,
 .navbar .dropdown-item:hover {
-    background-color: #d9f3f28e;
+    background-color: #e1eeed23;
     color: #ffffff;
     border-radius: 8px;
 }
@@ -553,10 +553,14 @@ footer div>a {
     }
     #footer-1{
         display: flex;
-        margin-left: 370px;
+        padding-left:320px ;
     }
     #footer-2{
         margin-left: 40px;
+        margin-top: -8px;
+    }
+    ::placeholder{
+        color: white !important;
     }
 }
 @media (max-width: 767px) {
@@ -842,5 +846,9 @@ footer div>a {
     }
     #icon-1 {
         display: none !important;
+    }
+    footer div div div .hover-box {
+        font-weight: bold  !important;
+        font: 18px Arial, Helvetica, sans-serif;
     }
 }
