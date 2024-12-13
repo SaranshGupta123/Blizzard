@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', function (event) {
             event.preventDefault();
-            const dropdownMenu = this.nextElementSibling; // Get the associated dropdown menu
+            const dropdownMenu = this.nextElementSibling;
             const isDisplayed = dropdownMenu.style.display === 'block';
             dropdownMenu.style.display = isDisplayed ? 'none' : 'block';
         });
     });
-
-    // Close dropdowns when clicking outside
     document.addEventListener('click', function (event) {
         dropdownToggles.forEach(toggle => {
             const dropdownMenu = toggle.nextElementSibling;
@@ -87,10 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", function () {
     const languageDropdownToggle = document.getElementById("languageDropdown");
     const languageDropdownMenu = languageDropdownToggle.nextElementSibling; 
+    const languageItems = languageDropdownMenu.querySelectorAll(".dropdown-item");
+
     languageDropdownToggle.addEventListener("click", function (event) {
         event.preventDefault(); 
         const isDisplayed = languageDropdownMenu.style.display === "block";
         languageDropdownMenu.style.display = isDisplayed ? "none" : "block";
+    });
+    languageItems.forEach(item => {
+        item.addEventListener("click", function () {
+            languageItems.forEach(i => i.classList.remove("selected"));
+            this.classList.add("selected");
+            languageDropdownToggle.innerHTML = `<i class="bi bi-globe"></i> ${this.textContent} <i class="bi bi-caret-down-fill ms-2"></i>`;
+            languageDropdownMenu.style.display = "none";
+        });
     });
     document.addEventListener("click", function (event) {
         if (
