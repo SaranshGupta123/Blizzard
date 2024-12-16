@@ -59,7 +59,6 @@
     margin: 0;
 }
 .navbar .logo-img:hover {
-    transform: scale(1.1);
     opacity: 0.8;
 }
 .navbar .nav-items {
@@ -116,12 +115,6 @@
     border-radius: 5px;
     padding: 0.5rem 1rem;
     font-weight: bold;
-}
-.navbar .btn-try-free:hover {
-    background-color: #3f1313;
-}
-.navbar .btn-subscribe:hover {
-    background-color: #0056b3;
 }
 .navbar .nav-items,
 .navbar .action-items {
@@ -341,6 +334,10 @@ footer div>a {
 .footer .dropdown-menu .dropdown-item {
     font-weight: 400;
 }
+#icon-1{
+    font-size: 12px !important;
+    margin-left: -1px !important;
+}
 @media (min-width: 992px) {
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -401,12 +398,14 @@ footer div>a {
         margin-left: 0;
     }
     .navbar .btn-subscribe:hover {
-        transform: scale(1.1);
         opacity: 0.8;
+        background-color: #aa2409 !important;
+        transform: none !important;
     }
     .navbar .btn-try-free:hover {
-        transform: scale(1.1);
+        transform: none !important;
         opacity: 0.8;
+        background-color: #3f1313 !important;
     }
     .dropdown-menu-left {
         left: auto !important;
@@ -506,7 +505,7 @@ footer div>a {
         color: #d3c6b8;
     }
     #subscribe{
-        margin-left: 20px;
+        margin-left: 10px;
     }
     #try-free{
         margin-left: 5px;
@@ -531,6 +530,10 @@ footer div>a {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    #loginButton:hover {
+        background-color: #0c28c4 !important;
+        transform: none !important;
     }
     .card-hover:hover .card-img-top {
         border: 2px solid yellow !important;

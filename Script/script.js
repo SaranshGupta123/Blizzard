@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener("click", function () {
             languageItems.forEach(i => i.classList.remove("selected"));
             this.classList.add("selected");
-            languageDropdownToggle.innerHTML = `<i class="bi bi-globe"></i> ${this.textContent} <i class="bi bi-caret-down-fill ms-2"></i>`;
+            languageDropdownToggle.innerHTML = `<i class="bi bi-globe"></i> ${this.textContent} <i class="bi bi-chevron-down ms-2"></i>`;
             languageDropdownMenu.style.display = "none";
         });
     });
