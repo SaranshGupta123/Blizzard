@@ -58,9 +58,6 @@
     height: 50px;
     margin: 0;
 }
-.navbar .logo-img:hover {
-    opacity: 0.8;
-}
 .navbar .nav-items {
     display: flex;
     flex-grow: 1;
@@ -94,25 +91,22 @@
 .navbar .dropdown-item:hover {
     background-color: #edf7f63d !important;
     color: #ffffff;
-    border-radius: 8px;
 }
 .navbar .btn-try-free,
 .navbar .btn-subscribe {
-    border-radius: 5px;
     padding: 0.3rem 0.8rem;
     white-space: nowrap;
+    border-radius: 0px;
 }
 .navbar .btn-try-free {
     background-color: #3f1313;
     color: #fff;
-    border-radius: 5px;
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
 .navbar .btn-subscribe {
     background-color: #007bff;
     color: #fff;
-    border-radius: 5px;
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
@@ -473,7 +467,6 @@ footer div>a {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 5px;
     }
     .highlight-card .card-img-overlay {
         padding: 10px;
@@ -503,6 +496,7 @@ footer div>a {
         padding: 8px 12px;
         font-size: 0.9rem;
         color: #d3c6b8;
+        top:-150%;
     }
     #subscribe{
         margin-left: 10px;
@@ -566,11 +560,14 @@ footer div>a {
     .selected {
         position: relative;
     }
-    .selected::after {
+    footer .selected::after {
         content: '✔';
         position: absolute;
         right: 10px;
         color: yellow;
+    }
+    .navbar .try-1{
+        display: none !important;
     }
 }
 @media (max-width: 767px) {
@@ -856,5 +853,8 @@ footer div>a {
     }
     .footer .london{
         margin-left: 17px;
+    }
+    .action-items .try-2{
+        display: none !important;
     }
 }
