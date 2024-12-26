@@ -41,7 +41,7 @@
 }
 .navbar {
     display: flex;
-    align-items: center;
+    align-items: center !important;
     justify-content: flex-start;
     padding: 0;
     margin: 0;
@@ -90,6 +90,7 @@
 .navbar .btn:hover,
 .navbar .dropdown-item:hover {
     background-color: #edf7f63d !important;
+    border-radius: 5px;
     color: #ffffff;
 }
 .navbar .btn-try-free,
@@ -97,6 +98,7 @@
     padding: 0.3rem 0.8rem;
     white-space: nowrap;
     border-radius: 0px;
+    border-radius: 10px;
 }
 .navbar .btn-try-free {
     background-color: #3f1313;
@@ -163,7 +165,6 @@
     margin: 0;
     padding: 0.5rem 1rem;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .navbar .nav-link:hover,
 .navbar .btn:hover {
@@ -299,6 +300,9 @@ footer div>a {
     transform: none !important;
     transition: none !important;
 }
+#searchDropdown{
+    margin-left: 15px;
+}
 #searchDropdown .dropdown-menu .form-control:hover,
 #searchDropdown .dropdown-menu .btn:hover {
     color: inherit !important;
@@ -388,8 +392,10 @@ footer div>a {
     }
     .navbar .nav-link,
     .navbar .btn {
-        margin-right: 0;
-        margin-left: 0;
+        padding: 0.5rem 1rem; /* Equal padding for all navbar items */
+        margin: 0; /* Remove any margin */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: #ffffff;
     }
     .navbar .btn-subscribe:hover {
         opacity: 0.8;
@@ -498,12 +504,6 @@ footer div>a {
         color: #d3c6b8;
         top:-150%;
     }
-    #subscribe{
-        margin-left: 10px;
-    }
-    #try-free{
-        margin-left: 5px;
-    }
     .footer {
         padding-left: 5rem;
         padding-right: 5rem; 
@@ -538,7 +538,7 @@ footer div>a {
         color: #ffffff;
     }
     #searchTray{
-        margin-left: -150px !important;
+        margin-left: -120px !important;
     }
     #footer-1{
         display: flex;
@@ -568,6 +568,28 @@ footer div>a {
     }
     .navbar .try-1{
         display: none !important;
+    }
+    .dropdown-arrow {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #531717;
+    }
+    .search-input {
+        position: relative;
+    }
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 1rem;
+        padding-left: 25px;
     }
 }
 @media (max-width: 767px) {
