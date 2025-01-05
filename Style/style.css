@@ -93,11 +93,13 @@
     border-radius: 5px;
     color: #ffffff;
 }
+#blizzardDropdown:hover{
+    background-color: transparent !important;
+}
 .navbar .btn-try-free,
 .navbar .btn-subscribe {
     padding: 0.3rem 0.8rem;
     white-space: nowrap;
-    border-radius: 0px;
     border-radius: 10px;
 }
 .navbar .btn-try-free {
@@ -303,13 +305,7 @@ footer div>a {
 #searchDropdown{
     margin-left: 15px;
 }
-#searchDropdown .dropdown-menu .form-control:hover,
-#searchDropdown .dropdown-menu .btn:hover {
-    color: inherit !important;
-    background-color: inherit !important;
-    transform: none !important;
-    transition: none !important;
-}
+
 #searchDropdown i:hover {
     color: white !important;
     transform: none !important;
@@ -337,6 +333,7 @@ footer div>a {
     margin-left: -1px !important;
 }
 @media (min-width: 992px) {
+    
     .dropdown:hover .dropdown-menu {
         display: block;
         opacity: 1;
@@ -392,19 +389,21 @@ footer div>a {
     }
     .navbar .nav-link,
     .navbar .btn {
-        padding: 0.5rem 1rem; /* Equal padding for all navbar items */
-        margin: 0; /* Remove any margin */
+        padding: 0.5rem 1rem; 
+        margin: 0;
         transition: background-color 0.3s ease, color 0.3s ease;
         color: #ffffff;
     }
     .navbar .btn-subscribe:hover {
         opacity: 0.8;
         background-color: #aa2409 !important;
+        border-radius: 10px;
         transform: none !important;
     }
     .navbar .btn-try-free:hover {
         transform: none !important;
         opacity: 0.8;
+        border-radius: 10px;
         background-color: #3f1313 !important;
     }
     .dropdown-menu-left {
@@ -436,7 +435,7 @@ footer div>a {
         position: relative;
         padding: 10px;
         overflow: hidden;
-        width: 25%;
+        width: 25%; 
         height: 200px;
         border: none;
     }
@@ -473,9 +472,10 @@ footer div>a {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 0;
     }
     .highlight-card .card-img-overlay {
-        padding: 10px;
+        padding: 10px; 
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -505,11 +505,22 @@ footer div>a {
         top:-150%;
     }
     .footer {
-        padding-left: 5rem;
-        padding-right: 5rem; 
+        padding-left: 0; /* Remove left padding */
+        padding-right: 0; /* Remove right padding */
     }
+
     .footer .col-md-6 {
-        justify-content: space-between;
+        justify-content: flex-end; /* Align items to the right */
+        padding-right: 0; /* Remove right padding */
+    }
+
+    .footer .dropdown-menu {
+        right: 0; /* Align dropdown to the right */
+        left: auto; /* Ensure left is not set */
+    }
+
+    #languageDropdown {
+        margin-right: 0; /* Remove any right margin */
     }
     .dropdown-menu .btn-primary {
         font-weight: bold; 
